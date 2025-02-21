@@ -1,19 +1,5 @@
 # Home_sales
 
-1. Enable GPU (Optional but Recommended)
-
-Go to: Runtime → Change runtime type
-
-Select: Hardware accelerator → GPU
-
-Click: Save
-
-2. Install & Configure Apache Spark & Java
-
-Since Colab does not have Spark pre-installed, you must manually install and configure it:
-
-import os
-
 # Define Spark version
 spark_version = 'spark-3.5.4'
 os.environ['SPARK_VERSION'] = spark_version
@@ -33,13 +19,7 @@ os.environ["SPARK_HOME"] = f"/content/{spark_version}-bin-hadoop3"
 import findspark
 findspark.init()
 
-3. Install Required Python Libraries
-
-!pip install pyspark
-!pip install hadoop-aws
-!pip install boto3
-
-4. Create a Spark Session
+ Create a Spark Session
 
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("HomeSalesColab").getOrCreate()
