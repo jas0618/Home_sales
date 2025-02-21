@@ -1,24 +1,5 @@
 # Home_sales
 
-# Define Spark version
-spark_version = 'spark-3.5.4'
-os.environ['SPARK_VERSION'] = spark_version
-
-# Install Java and Spark
-!apt-get update
-!apt-get install openjdk-11-jdk-headless -qq > /dev/null
-!wget -q https://downloads.apache.org/spark/$SPARK_VERSION/$SPARK_VERSION-bin-hadoop3.tgz
-!tar xf $SPARK_VERSION-bin-hadoop3.tgz
-!pip install -q findspark
-
-# Set Environment Variables
-os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
-os.environ["SPARK_HOME"] = f"/content/{spark_version}-bin-hadoop3"
-
-# Initialize PySpark
-import findspark
-findspark.init()
-
  Create a Spark Session
 
 from pyspark.sql import SparkSession
